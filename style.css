@@ -196,3 +196,100 @@ footer {
         font-size: 2rem;
     }
 }
+
+/* --- Add these to the bottom of style.css --- */
+
+/* Footer & Legal */
+.abn {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-top: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+/* Specific Styles for Maker Page */
+.content-block {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    text-align: left;
+}
+
+.large-list li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.large-list strong {
+    color: var(--accent);
+}
+
+.section-label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Client Showcase Card */
+.client-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.client-info h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.client-info p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+/* Browser Mockup for Visual Interest */
+.browser-mockup {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 250px;
+    border: 1px solid var(--border);
+    position: relative;
+}
+
+.browser-mockup iframe {
+    width: 100%;
+    height: 200%; /* Height scaling for visual scaling */
+    border: none;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    pointer-events: none; /* Disables clicking inside the iframe preview */
+}
+
+.cta-section {
+    text-align: center;
+    padding: 2rem 0 4rem;
+}
+
+.cta-section h2 {
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .client-card {
+        grid-template-columns: 1fr;
+    }
+    .browser-mockup {
+        height: 200px;
+    }
+}
