@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Maker by 3LS.io - Websites for $2 a day.">
+    <meta name="description" content="The Maker by 3LS.io - Enterprise grade websites for small business prices.">
     <title>The Maker | 3LS.io</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,9 @@
             <a href="index.html" class="home-link">
                 <div class="logo">3LS<span>.io</span></div>
             </a>
-            <p class="tagline">The Maker</p>
+            <div class="header-right">
+                <span class="status-dot"></span> Accepting Clients
+            </div>
         </div>
     </header>
 
@@ -25,31 +27,74 @@
         <section class="maker-hero fade-in delay-1">
             <div class="container">
                 <div class="glow-bg"></div>
-                <h1>We Build.<br>You Business.</h1>
-                <p class="hero-sub">A complete digital presence.</p>
-                <div class="hero-price">
-                    <span class="currency">$</span>2<span class="period">/day</span>
+                <div class="hero-badge">The Future of Web Design</div>
+                <h1>Enterprise Grade.<br>Pocket Change Price.</h1>
+                <p class="hero-sub">Stop paying thousands upfront. Start growing today.</p>
+                
+                <div class="price-container">
+                    <div class="price-card">
+                        <div class="price-top">The Subscription</div>
+                        <div class="price-amount">$2<span>/day</span></div>
+                        <div class="price-bottom">Billed annually. Cancel anytime.</div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="value-prop fade-in delay-2">
+        <section class="comparison-section fade-in delay-2">
             <div class="container">
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <div class="icon">🚀</div>
-                        <h3>Zero Friction</h3>
-                        <p>No design fees. No build fees. No hourly rates. Just a flat subscription.</p>
+                <h2>Why the old model is broken</h2>
+                <div class="comparison-table">
+                    <div class="col agency">
+                        <h3>Design Agency</h3>
+                        <div class="cost">~$5,000+</div>
+                        <ul>
+                            <li>❌ Huge upfront fees</li>
+                            <li>❌ Weeks of meetings</li>
+                            <li>❌ Hourly costs for edits</li>
+                        </ul>
                     </div>
-                    <div class="feature-card">
-                        <div class="icon">🛡️</div>
-                        <h3>Fully Managed</h3>
-                        <p>Hosting, SSL security, and updates are all included. We never sleep so you can.</p>
+                    <div class="col diy">
+                        <h3>DIY Builders</h3>
+                        <div class="cost">~$30/mo + Your Time</div>
+                        <ul>
+                            <li>❌ You are the designer</li>
+                            <li>❌ You are the tech support</li>
+                            <li>❌ Generic templates</li>
+                        </ul>
                     </div>
-                    <div class="feature-card">
-                        <div class="icon">📱</div>
-                        <h3>Universal</h3>
-                        <p>Responsive designs that work perfectly on mobile, tablet, and desktop.</p>
+                    <div class="col maker highlight">
+                        <div class="best-value">Smart Choice</div>
+                        <h3>The Maker</h3>
+                        <div class="cost">$2 / day</div>
+                        <ul>
+                            <li>✅ <strong>Zero</strong> upfront cost</li>
+                            <li>✅ <strong>Zero</strong> tech headaches</li>
+                            <li>✅ <strong>100%</strong> Done-For-You</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-section fade-in delay-3">
+            <div class="container">
+                <h2>How it works</h2>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-num">01</div>
+                        <h3>We Chat</h3>
+                        <p>We learn about your business goals and style preferences.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">02</div>
+                        <h3>We Build</h3>
+                        <p>Our labs team constructs your custom, high-performance site.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">03</div>
+                        <h3>We Launch</h3>
+                        <p>We handle the domain, the server, and the security. You just go live.</p>
                     </div>
                 </div>
             </div>
@@ -57,20 +102,21 @@
 
         <section class="showcase fade-in delay-3">
             <div class="container">
-                <div class="section-label">Featured Client</div>
-                
+                <div class="section-label">Live In The Wild</div>
                 <div class="client-spotlight">
                     <div class="spotlight-content">
                         <h2>Santa Secret</h2>
-                        <p class="client-desc">A magical online experience connecting families with Santa. Built to handle high seasonal traffic with a clean, festive interface.</p>
+                        <p class="client-desc">We built a festive, high-traffic platform that handles seasonal spikes with zero downtime.</p>
+                        <ul class="stats">
+                            <li><span>100%</span> Uptime</li>
+                            <li><span>0.4s</span> Load Time</li>
+                        </ul>
                         <a href="https://santasecret.com.au/" target="_blank" class="btn btn-primary">Visit Live Site ↗</a>
                     </div>
                     <div class="spotlight-visual">
                         <div class="browser-frame">
                             <div class="browser-header">
-                                <span class="dot red"></span>
-                                <span class="dot yellow"></span>
-                                <span class="dot green"></span>
+                                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
                                 <div class="url-bar">santasecret.com.au</div>
                             </div>
                             <div class="browser-body">
@@ -79,21 +125,23 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <section class="cta-section fade-in delay-3">
+        <section class="cta-section">
             <div class="container">
-                <h2>Ready to launch?</h2>
-                <a href="mailto:hello@3ls.io?subject=Start Building with The Maker" class="btn btn-secondary">Get Started</a>
+                <div class="cta-box">
+                    <h2>Your new website is waiting.</h2>
+                    <p>No risk. Pure performance.</p>
+                    <a href="mailto:hello@3ls.io?subject=Start Building with The Maker" class="btn btn-primary">Start Building</a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> Listing Lens Labs. All rights reserved.</p>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Listing Lens Labs.</p>
             <p class="abn">Listing Lens Labs ABN 76 774 130 370</p>
         </div>
     </footer>
