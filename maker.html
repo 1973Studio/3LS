@@ -10,11 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="maker-page">
 
-    <header class="site-header">
+    <header class="site-header fade-in">
         <div class="container">
-            <a href="index.html" style="text-decoration:none; color:inherit;">
+            <a href="index.html" class="home-link">
                 <div class="logo">3LS<span>.io</span></div>
             </a>
             <p class="tagline">The Maker</p>
@@ -22,40 +22,60 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section class="maker-hero fade-in delay-1">
             <div class="container">
-                <h1>We Build. You Business.</h1>
-                <p>A complete digital presence for $2 a day.</p>
-            </div>
-        </section>
-
-        <section class="details">
-            <div class="container">
-                <div class="content-block">
-                    <h2>How It Works</h2>
-                    <p>The Maker is designed for small businesses who need a professional website without the headache of managing servers, designers, or updates.</p>
-                    <ul class="feature-list large-list">
-                        <li><strong>Zero Upfront Cost:</strong> No design fees. No build fees.</li>
-                        <li><strong>All-Inclusive:</strong> Hosting, SSL security, and maintenance are included.</li>
-                        <li><strong>Accessible:</strong> We build sites that work on every device, for every user.</li>
-                    </ul>
+                <div class="glow-bg"></div>
+                <h1>We Build.<br>You Business.</h1>
+                <p class="hero-sub">A complete digital presence.</p>
+                <div class="hero-price">
+                    <span class="currency">$</span>2<span class="period">/day</span>
                 </div>
             </div>
         </section>
 
-        <section class="showcase">
+        <section class="value-prop fade-in delay-2">
             <div class="container">
-                <h3 class="section-label">Featured Client</h3>
-                
-                <div class="client-card">
-                    <div class="client-info">
-                        <h2>Santa Secret</h2>
-                        <p>A magical online experience connecting families with Santa. Built to handle high seasonal traffic with a clean, festive user interface.</p>
-                        <a href="https://santasecret.com.au/" target="_blank" class="btn btn-secondary">Visit Live Site &rarr;</a>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="icon">🚀</div>
+                        <h3>Zero Friction</h3>
+                        <p>No design fees. No build fees. No hourly rates. Just a flat subscription.</p>
                     </div>
-                    <div class="client-visual">
-                        <div class="browser-mockup">
-                            <iframe src="https://santasecret.com.au/" title="Santa Secret Preview" scrolling="no"></iframe>
+                    <div class="feature-card">
+                        <div class="icon">🛡️</div>
+                        <h3>Fully Managed</h3>
+                        <p>Hosting, SSL security, and updates are all included. We never sleep so you can.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">📱</div>
+                        <h3>Universal</h3>
+                        <p>Responsive designs that work perfectly on mobile, tablet, and desktop.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="showcase fade-in delay-3">
+            <div class="container">
+                <div class="section-label">Featured Client</div>
+                
+                <div class="client-spotlight">
+                    <div class="spotlight-content">
+                        <h2>Santa Secret</h2>
+                        <p class="client-desc">A magical online experience connecting families with Santa. Built to handle high seasonal traffic with a clean, festive interface.</p>
+                        <a href="https://santasecret.com.au/" target="_blank" class="btn btn-primary">Visit Live Site ↗</a>
+                    </div>
+                    <div class="spotlight-visual">
+                        <div class="browser-frame">
+                            <div class="browser-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                                <div class="url-bar">santasecret.com.au</div>
+                            </div>
+                            <div class="browser-body">
+                                <iframe src="https://santasecret.com.au/" title="Client Site" scrolling="no"></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -63,10 +83,10 @@
             </div>
         </section>
 
-        <section class="cta-section">
+        <section class="cta-section fade-in delay-3">
             <div class="container">
-                <h2>Ready to get online?</h2>
-                <a href="mailto:hello@3ls.io?subject=Start Building with The Maker" class="btn btn-primary" style="max-width: 300px;">Contact Us</a>
+                <h2>Ready to launch?</h2>
+                <a href="mailto:hello@3ls.io?subject=Start Building with The Maker" class="btn btn-secondary">Get Started</a>
             </div>
         </section>
     </main>
