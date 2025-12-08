@@ -1,80 +1,360 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="3LS.io - Listing Lens Labs. The home of The Maker and Listing Lens.">
-    <title>3LS.io | Listing Lens Labs</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-</head>
-<body>
+import React, { useState, useEffect } from 'react';
+import { Play, Check, X, ArrowRight, ScanLine, Car, ShieldAlert, Star, Smartphone, Menu } from 'lucide-react';
 
-    <header class="site-header">
-        <div class="container">
-            <div class="logo">3LS<span>.io</span></div>
-            <p class="tagline">Listing Lens Labs</p>
-        </div>
-    </header>
+const App = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Innovation for the Modern Economy</h1>
-                <p>The parent company building tools for transparency and accessibility.</p>
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setMobileMenuOpen(false);
+  };
+
+  return (
+    <div className="min-h-screen bg-neutral-950 text-white font-sans selection:bg-indigo-500 selection:text-white overflow-x-hidden">
+      
+      {/* Navigation */}
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-neutral-950/90 backdrop-blur-md py-4 border-b border-neutral-800' : 'bg-transparent py-6'}`}>
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+          <div className="flex items-center gap-3">
+             <div className="text-2xl font-bold tracking-tighter flex items-center gap-1">
+              <span className="text-white">3LS</span>
+              <span className="text-indigo-500">//</span>
+              <span className="text-neutral-400 font-normal hidden sm:block">Listing Lens Labs</span>
             </div>
-        </section>
+          </div>
+          
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-300">
+            <button onClick={() => scrollToSection('vision')} className="hover:text-white transition-colors">The Vision</button>
+            <button onClick={() => scrollToSection('websites')} className="hover:text-white transition-colors">Websites ($2/Day)</button>
+            <button onClick={() => scrollToSection('app')} className="hover:text-white transition-colors">Listing Lens App</button>
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="px-5 py-2.5 bg-white text-neutral-950 rounded-full hover:bg-neutral-200 transition-all font-semibold"
+            >
+              Start Project
+            </button>
+          </div>
 
-        <section class="offerings">
-            <div class="container grid-2">
+          <button 
+            className="md:hidden text-white"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
+        
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="absolute top-full left-0 w-full bg-neutral-900 border-b border-neutral-800 p-6 flex flex-col gap-4 md:hidden">
+             <button onClick={() => scrollToSection('vision')} className="text-left text-lg font-medium text-neutral-300">The Vision</button>
+             <button onClick={() => scrollToSection('websites')} className="text-left text-lg font-medium text-neutral-300">Websites</button>
+             <button onClick={() => scrollToSection('app')} className="text-left text-lg font-medium text-neutral-300">The App</button>
+          </div>
+        )}
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden">
+        {/* Tech Background Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-indigo-600/20 rounded-full blur-[100px] -z-10"></div>
+
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-indigo-400 text-xs font-bold tracking-wide uppercase mb-8">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+            </span>
+            Lab Active: Building the Future
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1.1] mb-8">
+            We Build Digital <br />
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400">
+              Reality.
+            </span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-neutral-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+            3LS is a hybrid technology lab. We build high-end websites for you, and AI-powered platforms for the world.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button 
+              onClick={() => scrollToSection('websites')}
+              className="w-full sm:w-auto px-8 py-4 bg-white text-neutral-950 rounded-full font-bold text-lg hover:bg-neutral-200 transition-all flex items-center justify-center gap-2 group"
+            >
+              Get a Site ($2/Day)
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+            <button 
+              onClick={() => scrollToSection('app')}
+              className="w-full sm:w-auto px-8 py-4 bg-neutral-900 border border-neutral-800 text-white rounded-full font-bold text-lg hover:bg-neutral-800 transition-all flex items-center justify-center gap-2"
+            >
+              <ScanLine className="w-5 h-5" />
+              See Listing Lens
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW SECTION: Anything is Possible */}
+      <section id="vision" className="py-24 px-6 bg-neutral-950 border-b border-neutral-900">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-4xl md:text-6xl font-bold mb-12 tracking-tight">Anything is Possible</h2>
+          
+          <div className="aspect-video w-full bg-neutral-900 rounded-2xl border border-neutral-800 relative overflow-hidden shadow-2xl group">
+             {/* Auto-playing Background Video */}
+             <video 
+                src="https://p2-kling.klingai.com/kcdn/cdn-kcdn112452/kling-website/page3-v2-2-en.mp4" 
+                className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-1000"
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+             ></video>
+
+             {/* Overlay Gradient */}
+             <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent pointer-events-none"></div>
+             
+             {/* Content Overlay */}
+             <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 text-left z-10 flex flex-col md:flex-row justify-between items-end gap-6">
+                <div>
+                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-indigo-300 text-xs font-bold mb-3 uppercase tracking-wider">
+                     AI Generated Reality
+                   </div>
+                   <p className="text-white text-lg md:text-xl font-medium max-w-xl leading-relaxed">
+                     We are pushing the boundaries of what web technology can do. From simple sites to complex AI vision systems.
+                   </p>
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRODUCT 1: THE WEBSITES ($2/Day) */}
+      <section id="websites" className="py-24 px-6 relative bg-neutral-950">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="text-indigo-500 font-bold mb-4 tracking-wider uppercase text-sm">The Agency Service</div>
+              <h2 className="text-4xl md:text-6xl font-bold mb-6">
+                Spectacular. <br />
+                <span className="text-neutral-500">For less than a Coke.</span>
+              </h2>
+              <p className="text-xl text-neutral-400 mb-8 leading-relaxed">
+                Most agencies want $5k upfront. We charge $0 upfront. We get your business online with a premium, modern site for just <span className="text-white font-bold">$2 a day</span> ($60/mo).
+              </p>
+              
+              <div className="flex flex-col gap-6">
+                {/* Comparison Card */}
+                <div className="p-6 bg-neutral-900 rounded-2xl border border-neutral-800 relative overflow-hidden">
+                   <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-red-900/30 flex items-center justify-center text-red-500">🥤</div>
+                        <div>
+                          <div className="font-bold">A Coke</div>
+                          <div className="text-xs text-neutral-500">Gone in 5 minutes</div>
+                        </div>
+                      </div>
+                      <div className="text-xl font-bold text-neutral-500 line-through">$3.50</div>
+                   </div>
+                   <div className="w-full h-px bg-neutral-800 mb-4"></div>
+                   <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                         <div className="w-10 h-10 rounded-full bg-indigo-900/30 flex items-center justify-center text-indigo-400">🚀</div>
+                         <div>
+                           <div className="font-bold text-white">Your Website</div>
+                           <div className="text-xs text-indigo-400">Available 24/7/365</div>
+                         </div>
+                      </div>
+                      <div className="text-2xl font-bold text-white">$2.00</div>
+                   </div>
+                </div>
+
+                <ul className="space-y-3">
+                  {['No Upfront Fees', 'Hosting Included', 'Mobile Optimized', 'Design That Sells'].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-neutral-300">
+                      <Check className="w-5 h-5 text-indigo-500" /> {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Visual for Website Service */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-indigo-600/10 blur-[80px] rounded-full"></div>
+              <div className="relative bg-neutral-900 border border-neutral-800 rounded-2xl p-2 shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+                <div className="bg-neutral-950 rounded-xl overflow-hidden aspect-[4/3] relative group">
+                  {/* Mock Website Header */}
+                  <div className="h-8 bg-neutral-900 border-b border-neutral-800 flex items-center px-4 gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500/50"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
+                    <div className="ml-4 w-1/2 h-2 bg-neutral-800 rounded-full"></div>
+                  </div>
+                  {/* Mock Website Body */}
+                  <div className="p-8 flex flex-col items-center justify-center h-full text-center">
+                    <div className="w-24 h-24 bg-gradient-to-tr from-indigo-500 to-purple-500 rounded-full mb-6 animate-pulse"></div>
+                    <div className="w-3/4 h-4 bg-neutral-800 rounded mb-3"></div>
+                    <div className="w-1/2 h-4 bg-neutral-800 rounded"></div>
+                    <div className="mt-8 px-6 py-2 bg-white text-black rounded-full text-sm font-bold">Your Business</div>
+                  </div>
+                  
+                  {/* Overlay on hover */}
+                  <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <button className="px-6 py-3 bg-indigo-600 text-white rounded-full font-bold">Start Building</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRODUCT 2: LISTING LENS APP */}
+      <section id="app" className="py-24 px-6 bg-indigo-950/20 border-y border-indigo-500/10 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center flex-row-reverse">
+            
+            {/* The Tech Visualization (Phone Scanner) */}
+            <div className="order-2 lg:order-1 relative flex justify-center">
+              <div className="w-[300px] h-[600px] bg-neutral-900 border-4 border-neutral-800 rounded-[3rem] p-4 relative shadow-2xl">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-neutral-900 rounded-b-xl z-20"></div>
                 
-                <div class="card maker">
-                    <div class="card-header">
-                        <h2>The Maker</h2>
-                        <span class="badge">For Business</span>
-                    </div>
-                    <p class="price">$2 / day</p>
-                    <p class="sub-price">No hidden costs. Ever.</p>
-                    <div class="card-body">
-                        <p>High-performance websites for small businesses. We handle the tech so you can handle the business.</p>
-                        <ul class="feature-list">
-                            <li>✓ Complete Design & Build</li>
-                            <li>✓ Hosting Included</li>
-                            <li>✓ Zero Maintenance</li>
-                        </ul>
-                    </div>
-                    <a href="maker.html" class="btn btn-primary">Start Building</a>
-                </div>
+                {/* Screen Content */}
+                <div className="w-full h-full bg-neutral-950 rounded-[2.5rem] overflow-hidden relative">
+                   {/* Fake Car Ad Image */}
+                   <div className="w-full h-1/2 bg-neutral-800 relative">
+                     <div className="absolute inset-0 flex items-center justify-center text-neutral-600">
+                        <Car className="w-20 h-20 opacity-50" />
+                     </div>
+                     {/* OCR Scanning Line Animation */}
+                     <div className="absolute top-0 left-0 w-full h-1 bg-indigo-500 shadow-[0_0_20px_rgba(99,102,241,0.8)] animate-[scan_3s_ease-in-out_infinite]"></div>
+                     
+                     {/* Data Popups */}
+                     <div className="absolute top-10 right-4 bg-green-500/90 text-white text-[10px] px-2 py-1 rounded animate-bounce font-mono">
+                       $17,000 DETECTED
+                     </div>
+                     <div className="absolute bottom-10 left-4 bg-indigo-500/90 text-white text-[10px] px-2 py-1 rounded font-mono">
+                       COMMODORE SS
+                     </div>
+                   </div>
 
-                <div class="card lens">
-                    <div class="card-header">
-                        <h2>Listing Lens</h2>
-                        <span class="badge">For Buyers</span>
-                    </div>
-                    <p class="price">The App</p>
-                    <p class="sub-price">Coming Soon</p>
-                    <div class="card-body">
-                        <p>The information engine that educates buyers. We look <em>between</em> the listings online to find the truth.</p>
-                        <ul class="feature-list">
-                            <li>✓ Market Analysis</li>
-                            <li>✓ Hidden Insights</li>
-                            <li>✓ Buyer Education</li>
-                        </ul>
-                    </div>
-                    <button class="btn btn-secondary">Join Waitlist</button>
-                </div>
+                   {/* Analysis Section */}
+                   <div className="p-6 space-y-4">
+                      <div className="flex items-center gap-2 text-indigo-400 font-bold text-sm uppercase">
+                        <ScanLine className="w-4 h-4" /> Analysis Complete
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <div className="bg-neutral-900 p-3 rounded-lg border border-red-500/20 flex gap-3">
+                          <ShieldAlert className="w-5 h-5 text-red-500 flex-shrink-0" />
+                          <div>
+                            <div className="text-xs text-red-400 font-bold">RECALL ALERT</div>
+                            <div className="text-xs text-neutral-400">Airbag sensor failure reported.</div>
+                          </div>
+                        </div>
 
+                         <div className="bg-neutral-900 p-3 rounded-lg border border-neutral-800 flex gap-3">
+                          <Star className="w-5 h-5 text-yellow-500 flex-shrink-0" />
+                          <div>
+                            <div className="text-xs text-white font-bold">OWNER REVIEWS</div>
+                            <div className="text-xs text-neutral-400">"Great power, thirsty on fuel."</div>
+                          </div>
+                        </div>
+                      </div>
+                   </div>
+                </div>
+              </div>
             </div>
-        </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> Listing Lens Labs. All rights reserved.</p>
+            {/* The Copy */}
+            <div className="order-1 lg:order-2">
+               <div className="text-indigo-400 font-bold mb-4 tracking-wider uppercase text-sm flex items-center gap-2">
+                 <Smartphone className="w-4 h-4" /> The Innovation
+               </div>
+               <h2 className="text-4xl md:text-6xl font-bold mb-6">
+                 Listing Lens.<br />
+                 <span className="text-white">Snap. Scan. Know.</span>
+               </h2>
+               <p className="text-xl text-neutral-400 mb-8 leading-relaxed">
+                 We are building the ultimate transparency tool for vehicle buying.
+               </p>
+               <p className="text-lg text-neutral-300 mb-8">
+                 Found a car for sale? Don't just read the ad. 
+                 <br/><br/>
+                 <span className="text-white font-bold">1. Upload a Screenshot.</span> Our OCR AI reads the listing (Price, Model, Year).
+                 <br/>
+                 <span className="text-white font-bold">2. Deep Dive.</span> We instantly pull safety recalls, common mechanical faults, and real owner reviews.
+               </p>
+               
+               <button className="px-6 py-3 border border-indigo-500 text-indigo-400 rounded-full font-bold hover:bg-indigo-500 hover:text-white transition-all">
+                 Join the Beta Waitlist
+               </button>
+            </div>
+
+          </div>
         </div>
-    </footer>
+      </section>
 
-</body>
-</html>
+      {/* Footer */}
+      <footer id="contact" className="bg-neutral-950 pt-20 pb-10 px-6 border-t border-neutral-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 mb-20">
+            <div>
+              <div className="text-3xl font-bold tracking-tighter mb-6">3LS.</div>
+              <p className="text-neutral-400 max-w-sm mb-8">
+                Listing Lens Labs. <br/>
+                Constructing the future of web & transport data.
+              </p>
+            </div>
+            
+            <div className="bg-neutral-900 p-8 rounded-2xl border border-neutral-800">
+              <h3 className="text-xl font-bold mb-6">Let's Work Together</h3>
+              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                <div>
+                  <input type="email" placeholder="Your Email" className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors" />
+                </div>
+                <div>
+                  <textarea rows="3" placeholder="I need a website... OR ... Tell me more about Listing Lens" className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"></textarea>
+                </div>
+                <button className="w-full py-3 bg-white text-neutral-950 font-bold rounded-lg hover:bg-neutral-200 transition-colors">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+          <div className="text-center text-neutral-600 text-sm">
+            &copy; 2024/2025 Listing Lens Labs. All rights reserved.
+          </div>
+        </div>
+      </footer>
+
+      {/* Global CSS for Animations */}
+      <style>{`
+        @keyframes scan {
+          0% { top: 0; opacity: 0; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { top: 100%; opacity: 0; }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default App;
