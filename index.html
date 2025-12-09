@@ -2,16 +2,16 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
-  <title>3LS // Listing Lens Labs – $2/Day Websites</title>
+  <title>3LS // Websites for Real-World Businesses</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="3LS builds bright, modern $2/day websites for real-world businesses. See how we helped Santa Secret bring their Christmas store online, then start your own site."
+    content="3LS builds simple, modern websites for real-world businesses with straightforward daily pricing and no big upfront invoice."
   />
 
-  <!-- Tailwind config -->
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind = window.tailwind || {};
     tailwind.config = {
       theme: {
         extend: {
@@ -19,14 +19,15 @@
             sans: ['Inter', 'system-ui', 'sans-serif'],
           },
           colors: {
-            primary: {
-              50: '#eef2ff',
-              100: '#e0e7ff',
-              500: '#4f46e5',
-              600: '#4338ca',
+            brand: {
+              50: '#f4f6f5',
+              100: '#e6ebe8',
+              600: '#1f6a4b',
+              700: '#17513a',
             },
             accent: {
-              500: '#ef4444',
+              500: '#f97316',
+              600: '#ea580c',
             },
           },
         },
@@ -34,368 +35,625 @@
     };
   </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-
+  <!-- Font -->
   <link
-    rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='28' cy='28' r='16' stroke='%234F46E5' stroke-width='6' fill='none'/%3E%3Cline x1='38' y1='38' x2='52' y2='52' stroke='%234F46E5' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
   />
-
-  <style>
-    body {
-      background-color: #f9fafb;
-      color: #0f172a;
-      font-family: 'Inter', sans-serif;
-    }
-  </style>
 </head>
+<body class="bg-brand-50 text-slate-900 font-sans antialiased">
+  <!-- Page wrapper -->
+  <div class="min-h-screen flex flex-col">
 
-<body class="antialiased text-slate-900">
-
-  <!-- NAV -->
-  <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
-    <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-      <a href="#top" class="flex items-center gap-2">
-        <span class="text-xl font-black tracking-tight text-slate-900">3LS</span>
-        <span class="text-primary-500 font-bold">//</span>
-      </a>
-
-      <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
-        <a href="#websites" class="hover:text-slate-900">Websites ($2/Day)</a>
-        <a href="#work" class="hover:text-slate-900">Our Work</a>
-        <a href="#lab" class="hover:text-slate-900">The Lab</a>
-        <a href="#contact" class="hover:text-slate-900">Contact</a>
-
-        <a href="#contact"
-           class="px-4 py-2 rounded-full bg-primary-500 text-white text-xs font-semibold hover:bg-primary-600">
-          Start My $2/Day Site
-        </a>
-      </div>
-
-      <button onclick="toggleMobileMenu()"
-              class="md:hidden text-slate-700 p-2 rounded-md">
-        <svg class="h-6 w-6" fill="none" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </nav>
-
-    <div id="mobile-menu"
-         class="hidden border-t border-slate-200 bg-white md:hidden">
-      <div class="max-w-6xl mx-auto flex flex-col px-4 py-3 gap-2 text-sm font-medium">
-        <a href="#websites" onclick="closeMobileMenu()" class="px-2 py-2 hover:bg-slate-50">Websites ($2/Day)</a>
-        <a href="#work" onclick="closeMobileMenu()" class="px-2 py-2 hover:bg-slate-50">Our Work</a>
-        <a href="#lab" onclick="closeMobileMenu()" class="px-2 py-2 hover:bg-slate-50">The Lab</a>
-        <a href="#contact" onclick="closeMobileMenu()" class="px-2 py-2 hover:bg-slate-50">Contact</a>
-
-        <a href="#contact"
-           onclick="closeMobileMenu()"
-           class="mt-1 px-3 py-2 rounded-full bg-primary-500 text-white text-xs font-semibold">
-          Start My $2/Day Site
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <main id="top" class="pt-20 sm:pt-24">
-    <section class="bg-gradient-to-b from-white to-slate-50 pb-16 pt-12 sm:pb-20">
-      <div class="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-10">
-
-        <!-- HERO TEXT -->
-        <div class="max-w-xl">
-          <div class="inline-flex items-center px-3 py-1 rounded-full bg-primary-50 text-primary-600 text-[11px] font-semibold">
-            <span class="h-2 w-2 rounded-full bg-primary-500 mr-2"></span>
-            Bright, custom websites for real businesses
+    <!-- Simple top nav -->
+    <header class="border-b border-slate-200 bg-white/80 backdrop-blur">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="h-8 w-8 rounded-xl bg-brand-600 flex items-center justify-center text-white text-sm font-semibold">
+            3LS
           </div>
-
-          <h1 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black leading-tight">
-            A beautiful, custom website<br>
-            for <span class="text-primary-600">$2 a day.</span>
-          </h1>
-
-          <p class="mt-4 text-slate-600 text-base sm:text-lg">
-            No templates. No DIY builders. No inflated agency fees.
-            We built 3LS because small businesses deserve a beautiful, modern website
-            without a $3,000–$7,000 upfront hit.
-            For $2/day, we design it, build it, host it and keep it updated —
-            so you can focus on running your business, not your website.
-          </p>
-
-          <div class="mt-6 flex flex-col sm:flex-row gap-3">
-            <a href="#contact"
-               class="w-full sm:w-auto px-6 py-3 text-sm font-semibold bg-primary-500 text-white rounded-full hover:bg-primary-600">
-              Start My $2/Day Site
-            </a>
-
-            <a href="#work"
-               class="w-full sm:w-auto px-6 py-3 text-sm font-semibold border border-slate-300 bg-white rounded-full hover:bg-slate-50">
-              See the Santa Secret Site
-            </a>
-          </div>
-
-          <p class="mt-3 text-xs text-slate-500">Hosting, updates and support included. No surprise fees.</p>
-
-          <div class="mt-5 flex flex-wrap items-center gap-2 text-[11px] text-slate-500">
-            <span class="uppercase tracking-[0.2em] text-slate-400">Powered by</span>
-            <span class="px-3 py-1 rounded-full border border-slate-300 bg-white">Netlify</span>
-            <span class="px-3 py-1 rounded-full border border-slate-300 bg-white">Airwallex</span>
-            <span class="px-3 py-1 rounded-full border border-slate-300 bg-white">Canva</span>
-            <span class="px-3 py-1 rounded-full border border-slate-300 bg-white">OpenAI</span>
-            <span class="px-3 py-1 rounded-full border border-slate-300 bg-white">GitHub</span>
-            <span class="px-3 py-1 rounded-full border border-slate-300 bg-white">HTML 5</span>
+          <div>
+            <div class="text-sm font-semibold tracking-tight text-slate-900">3LS</div>
+            <div class="text-xs text-slate-500">Websites for real-world businesses</div>
           </div>
         </div>
+        <nav class="hidden md:flex items-center gap-8 text-sm text-slate-700">
+          <a href="#how-it-works" class="hover:text-slate-900">How it works</a>
+          <a href="#what-you-get" class="hover:text-slate-900">What you get</a>
+          <a href="#pricing" class="hover:text-slate-900">Pricing</a>
+          <a href="#feature-site" class="hover:text-slate-900">Feature site</a>
+          <a href="#about" class="hover:text-slate-900">About</a>
+        </nav>
+        <a
+          href="#pricing"
+          class="hidden sm:inline-flex items-center gap-2 rounded-full bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-700 transition"
+        >
+          Get a website
+        </a>
+      </div>
+    </header>
 
-        <!-- PHONE VIDEO DEMO -->
-        <div class="flex justify-center flex-1">
-          <div class="bg-white p-5 shadow-lg rounded-3xl border border-slate-200 w-full max-w-md">
-            <p class="text-xs text-slate-500 font-semibold uppercase tracking-[0.2em]">
-              What modern websites feel like
+    <main class="flex-1">
+
+      <!-- Hero -->
+      <section class="bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div>
+            <p class="inline-flex items-center rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 border border-brand-100 mb-4">
+              Simple, modern websites with no big upfront invoice
             </p>
 
-            <div class="mt-3 flex justify-center">
-              <div class="max-w-xs w-full p-2 rounded-[2rem] border border-slate-200 bg-slate-900/90 shadow-lg">
-                <div class="aspect-[9/18] overflow-hidden rounded-[1.6rem] bg-black relative">
-                  <video
-                    class="absolute inset-0 h-full w-full object-cover"
-                    autoplay
-                    loop
-                    muted
-                    playsinline
-                    preload="auto"
-                  >
-                    <source src="https://3ls.io/catVid.mp4" type="video/mp4" />
-                  </video>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900">
+              $3 doesn’t get you much these days.<br />
+              <span class="text-brand-700">But it still gets you a website you’ll be proud of.</span>
+            </h1>
+
+            <p class="mt-5 text-base sm:text-lg text-slate-700 leading-relaxed">
+              Growing up, a couple of dollars bought a bag of lollies.  
+              These days it barely covers a sip of coffee.
+              So we decided to turn the clock back and make something real, affordable, and genuinely helpful again.
+            </p>
+
+            <p class="mt-4 text-sm sm:text-base text-slate-700">
+              A simple, modern website — designed, built and looked after for you —
+              for less than the cost of a coffee a day.
+            </p>
+
+            <div class="mt-8 flex flex-wrap items-center gap-4">
+              <a
+                href="#how-it-works"
+                class="inline-flex items-center justify-center rounded-full bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-700 transition"
+              >
+                See how it works
+              </a>
+              <a
+                href="#pricing"
+                class="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-800 bg-white hover:bg-slate-50 transition"
+              >
+                View pricing
+              </a>
+            </div>
+
+            <p class="mt-4 text-xs sm:text-sm text-slate-500">
+              No jargon. No tech headaches. Just a website that does its job.
+            </p>
+          </div>
+
+          <!-- Hero image placeholder (Unsplash) -->
+          <div class="lg:pl-6">
+            <div class="relative">
+              <div class="absolute -inset-4 bg-brand-50 rounded-3xl -z-10"></div>
+              <img
+                src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80"
+                alt="Small business owner working at a counter"
+                class="w-full rounded-3xl border border-slate-200 shadow-sm object-cover"
+              />
+              <div class="mt-4 grid grid-cols-2 gap-3">
+                <img
+                  src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=600&q=80"
+                  alt="People collaborating in a small studio"
+                  class="h-32 w-full rounded-2xl border border-slate-200 object-cover"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1520607162513-1a38c4a0d24a?auto=format&fit=crop&w=600&q=80"
+                  alt="Warm, homely workspace"
+                  class="h-32 w-full rounded-2xl border border-slate-200 object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Intro / The Why -->
+      <section class="bg-brand-50 border-t border-slate-200" id="how-it-works">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <div class="max-w-3xl">
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+              We make websites for real-world businesses.
+            </h2>
+            <p class="mt-4 text-base sm:text-lg text-slate-700 leading-relaxed">
+              The baker. The mechanic. The dog groomer. The hair salon.
+              The small team who never has time to update their hours, let alone build a website.
+            </p>
+            <p class="mt-4 text-sm sm:text-base text-slate-700">
+              Most business owners are stuck choosing between paying thousands upfront, or wrestling with a DIY builder at midnight.
+              Neither should be the norm.
+            </p>
+            <p class="mt-4 text-sm sm:text-base text-slate-700">
+              3LS is a simple way to get a clean, modern website without the big upfront hit or the stress of maintaining it.
+            </p>
+          </div>
+
+          <!-- Simple 3-step process -->
+          <div class="mt-10 grid md:grid-cols-3 gap-6" aria-label="How it works steps">
+            <div class="bg-white rounded-2xl border border-slate-200 p-5 flex flex-col gap-2">
+              <div class="h-8 w-8 rounded-full bg-brand-600 text-white flex items-center justify-center text-sm font-semibold">
+                1
+              </div>
+              <h3 class="text-sm font-semibold text-slate-900">Tell us about your business</h3>
+              <p class="text-sm text-slate-700">
+                We keep this short and simple. A quick chat or short form so we understand what you do and what you need.
+              </p>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-200 p-5 flex flex-col gap-2">
+              <div class="h-8 w-8 rounded-full bg-brand-600 text-white flex items-center justify-center text-sm font-semibold">
+                2
+              </div>
+              <h3 class="text-sm font-semibold text-slate-900">We design and build your site</h3>
+              <p class="text-sm text-slate-700">
+                You’ll see it before anything goes live. We tune the words, images and layout so it feels like you.
+              </p>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-200 p-5 flex flex-col gap-2">
+              <div class="h-8 w-8 rounded-full bg-brand-600 text-white flex items-center justify-center text-sm font-semibold">
+                3
+              </div>
+              <h3 class="text-sm font-semibold text-slate-900">We launch it and look after it</h3>
+              <p class="text-sm text-slate-700">
+                Hosting, updates, small tweaks — all included. You focus on your business; we quietly keep the internet part running.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What you get -->
+      <section class="bg-white" id="what-you-get">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 grid lg:grid-cols-[1.1fr,0.9fr] gap-10 lg:gap-16 items-start">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+              A website that feels like you.
+            </h2>
+            <p class="mt-4 text-base sm:text-lg text-slate-700 leading-relaxed">
+              Warm. Simple. Local. Familiar.
+              The kind of site your customers look at and think, “Yep, that’s them.”
+            </p>
+            <p class="mt-4 text-sm sm:text-base text-slate-700">
+              Every site is built to match your business, not a generic template. Clean, calm design that looks right at home on any modern device.
+            </p>
+
+            <div class="mt-6 grid sm:grid-cols-2 gap-4">
+              <div class="flex items-start gap-3">
+                <div class="mt-1 h-6 w-6 rounded-full bg-brand-100 flex items-center justify-center">
+                  <span class="text-xs font-semibold text-brand-700">✓</span>
+                </div>
+                <div>
+                  <h3 class="text-sm font-semibold text-slate-900">Custom design</h3>
+                  <p class="text-sm text-slate-700">
+                    Layout, colours and content tailored to your business — no one-size-fits-all themes.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="mt-1 h-6 w-6 rounded-full bg-brand-100 flex items-center justify-center">
+                  <span class="text-xs font-semibold text-brand-700">✓</span>
+                </div>
+                <div>
+                  <h3 class="text-sm font-semibold text-slate-900">Professional build</h3>
+                  <p class="text-sm text-slate-700">
+                    Fast, mobile-friendly and easy to navigate. Built to load quickly and just work.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="mt-1 h-6 w-6 rounded-full bg-brand-100 flex items-center justify-center">
+                  <span class="text-xs font-semibold text-brand-700">✓</span>
+                </div>
+                <div>
+                  <h3 class="text-sm font-semibold text-slate-900">Hosting included</h3>
+                  <p class="text-sm text-slate-700">
+                    We handle the technical side — secure hosting and keeping everything running smoothly.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="mt-1 h-6 w-6 rounded-full bg-brand-100 flex items-center justify-center">
+                  <span class="text-xs font-semibold text-brand-700">✓</span>
+                </div>
+                <div>
+                  <h3 class="text-sm font-semibold text-slate-900">Ongoing updates</h3>
+                  <p class="text-sm text-slate-700">
+                    Unlimited small changes and tweaks. New photos, changed hours, updated services — just ask.
+                  </p>
                 </div>
               </div>
             </div>
 
-            <p class="mt-4 text-xs text-slate-600">
-              Your website should feel alive — smooth, fast and beautiful on every phone.
-              This is the standard we build to.
+            <p class="mt-6 text-xs sm:text-sm text-slate-500">
+              Your business changes. Your website should keep up.
             </p>
           </div>
-        </div>
 
-      </div>
-    </section>
-
-    <!-- WEBSITES SECTION -->
-    <section id="websites" class="border-t border-slate-200 bg-white py-16 sm:py-20">
-      <div class="max-w-6xl mx-auto px-4 text-center">
-        <p class="text-xs font-semibold text-primary-600 uppercase tracking-[0.2em]">The $2/Day Website</p>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-bold text-slate-900">A proper website, without the painful price tag.</h2>
-
-        <p class="mt-4 text-slate-600 sm:text-lg">
-          Most agencies want $3k–$7k upfront.
-          We want <span class="font-semibold text-slate-900">$2 a day</span> and a long-term relationship.
-        </p>
-      </div>
-    </section>
-
-    <!-- OUR WORK -->
-    <section id="work" class="border-t border-slate-200 bg-slate-50 py-16 sm:py-20">
-      <div class="max-w-6xl mx-auto px-4">
-
-        <div class="max-w-3xl mx-auto text-center">
-          <p class="text-xs uppercase tracking-[0.2em] text-accent-500 font-semibold">Case Study</p>
-          <h2 class="mt-3 text-3xl sm:text-4xl font-bold text-slate-900">Santa Secret – Christmas, done properly.</h2>
-
-          <p class="mt-4 text-slate-600 sm:text-lg">
-            Santa Secret is a bricks-and-mortar Christmas shop.
-            Their website needed to feel magical, warm, and simple — just like walking into the store.
-          </p>
-        </div>
-
-        <div class="mt-10 grid lg:grid-cols-2 gap-8 items-start">
-
-          <!-- Breakdown -->
-          <div class="space-y-5">
-
-            <div class="rounded-2xl bg-white p-5 shadow-sm border border-slate-200">
-              <p class="text-xs text-slate-500 uppercase tracking-[0.2em] font-semibold">The brief</p>
-              <ul class="mt-2 text-sm text-slate-700 space-y-1">
-                <li>• Complement the physical store (not replace it).</li>
-                <li>• Showcase updated decorations & atmosphere.</li>
-                <li>• Clear hours, location, and a working contact form.</li>
-              </ul>
-            </div>
-
-            <div class="rounded-2xl bg-white p-5 shadow-sm border border-slate-200">
-              <p class="text-xs text-slate-500 uppercase tracking-[0.2em] font-semibold">What we designed</p>
-
-              <ul class="mt-2 text-sm text-slate-700 space-y-3">
-                <li>
-                  <span class="font-semibold">1. Hero banner with falling snow.</span><br>
-                  Subtle animation — festive, not tacky.
-                </li>
-                <li>
-                  <span class="font-semibold">2. Clean navigation.</span><br>
-                  Home, About, Visit Us, Contact.
-                </li>
-                <li>
-                  <span class="font-semibold">3. Contact form that gets used.</span><br>
-                  Proper delivery to their inbox.
-                </li>
-                <li>
-                  <span class="font-semibold">4. Social links up front.</span><br>
-                  Updated displays and announcements.
-                </li>
-              </ul>
-            </div>
-
-            <div class="rounded-2xl bg-white p-5 shadow-sm border border-slate-200">
-              <p class="text-xs text-slate-500 uppercase tracking-[0.2em] font-semibold">Why it works</p>
-              <p class="mt-2 text-sm text-slate-700">
-                It doesn't pretend to be an online shop.
-                It's a beautiful, simple digital brochure that makes people want to visit.
+          <!-- What you get image placeholder -->
+          <div class="lg:pl-4">
+            <div class="bg-brand-50 border border-slate-200 rounded-3xl p-4 flex flex-col gap-4">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80"
+                alt="Team working together in a relaxed office"
+                class="w-full rounded-2xl border border-slate-200 object-cover"
+              />
+              <p class="text-xs text-slate-500">
+                Placeholder image — swap this for a client website mockup, your workspace, or something that feels like your brand.
               </p>
             </div>
           </div>
+        </div>
+      </section>
 
-          <!-- LIVE IFRAME PREVIEW -->
-          <div class="flex justify-center lg:justify-end">
-            <div class="bg-white p-5 shadow-md rounded-3xl border border-slate-200 max-w-md w-full">
+      <!-- Pricing -->
+      <section class="bg-brand-50 border-y border-slate-200" id="pricing">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <div class="max-w-3xl">
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+              Two simple ways to get your new website.
+            </h2>
+            <p class="mt-4 text-base sm:text-lg text-slate-700 leading-relaxed">
+              Whether you’d rather pay a little now or a little later, both options include everything —
+              the design, the build, the hosting and the ongoing updates.
+            </p>
+          </div>
 
-              <p class="text-sm font-semibold text-slate-900 mb-4">What their site looks like</p>
-
-              <!-- Phone-frame live preview -->
-              <div class="mx-auto mb-4 w-full max-w-xs rounded-[2rem] border border-slate-200 bg-slate-900/90 p-2 shadow-lg">
-                <div class="aspect-[9/18] overflow-hidden rounded-[1.6rem] bg-black">
-                  <iframe
-                    src="https://santasecret.com.au/"
-                    class="w-full h-full"
-                    style="border:0;"
-                    title="Santa Secret Live Preview"
-                    loading="lazy"
-                  ></iframe>
-                </div>
+          <div class="mt-10 grid md:grid-cols-2 gap-6 md:gap-8 items-stretch">
+            <!-- Option A -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-7 flex flex-col">
+              <h3 class="text-sm font-semibold text-brand-700 uppercase tracking-wide">
+                Option A — Setup + Save
+              </h3>
+              <div class="mt-4 flex items-baseline gap-2">
+                <span class="text-3xl font-semibold text-slate-900">$3</span>
+                <span class="text-sm text-slate-600">/ day</span>
               </div>
-
-              <p class="text-sm text-center font-semibold text-slate-900">
-                “Discover the Secrets to an Unconventional Christmas…”
+              <p class="mt-1 text-sm text-slate-600">
+                + <span class="font-semibold text-slate-900">$150</span> one-time setup
+              </p>
+              <p class="mt-4 text-sm text-slate-700">
+                The best long-term value. A small upfront cost keeps your daily fee low.
               </p>
 
-              <p class="mt-2 text-sm text-slate-700 text-center">
-                A warm hero image, bold headline and clear CTA —
-                exactly what a local shop needs.
-              </p>
+              <ul class="mt-5 space-y-2.5 text-sm text-slate-700">
+                <li class="flex gap-2">
+                  <span class="mt-0.5 h-4 w-4 rounded-full bg-brand-100 flex items-center justify-center">
+                    <span class="text-[10px] text-brand-700 font-semibold">✓</span>
+                  </span>
+                  Custom design and full build
+                </li>
+                <li class="flex gap-2">
+                  <span class="mt-0.5 h-4 w-4 rounded-full bg-brand-100 flex items-center justify-center">
+                    <span class="text-[10px] text-brand-700 font-semibold">✓</span>
+                  </span>
+                  Hosting included
+                </li>
+                <li class="flex gap-2">
+                  <span class="mt-0.5 h-4 w-4 rounded-full bg-brand-100 flex items-center justify-center">
+                    <span class="text-[10px] text-brand-700 font-semibold">✓</span>
+                  </span>
+                  Ongoing updates and tweaks
+                </li>
+                <li class="flex gap-2">
+                  <span class="mt-0.5 h-4 w-4 rounded-full bg-brand-100 flex items-center justify-center">
+                    <span class="text-[10px] text-brand-700 font-semibold">✓</span>
+                  </span>
+                  Unlimited small changes
+                </li>
+              </ul>
 
-              <div class="mt-4 text-center">
-                <a href="https://santasecret.com.au/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="inline-flex items-center gap-2 bg-red-500 text-white text-xs px-4 py-2 rounded-full hover:bg-red-600">
-                  Visit the live site →
+              <div class="mt-6">
+                <a
+                  href="#contact"
+                  class="inline-flex w-full items-center justify-center rounded-full bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-700 transition"
+                >
+                  Start with Option A
                 </a>
               </div>
 
+              <p class="mt-3 text-xs text-slate-500">
+                Good for businesses with a little budget now who want the lowest ongoing cost.
+              </p>
             </div>
+
+            <!-- Option B -->
+            <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-7 flex flex-col md:translate-y-2">
+              <h3 class="text-sm font-semibold text-slate-900 uppercase tracking-wide">
+                Option B — No upfront cost
+              </h3>
+              <div class="mt-4 flex items-baseline gap-2">
+                <span class="text-3xl font-semibold text-slate-900">$5</span>
+                <span class="text-sm text-slate-600">/ day</span>
+              </div>
+              <p class="mt-1 text-sm text-slate-600">
+                <span class="font-semibold text-slate-900">$0</span> setup
+              </p>
+              <p class="mt-4 text-sm text-slate-700">
+                Start today with no initial outlay. Same inclusions, just paid over time.
+              </p>
+
+              <ul class="mt-5 space-y-2.5 text-sm text-slate-700">
+                <li class="flex gap-2">
+                  <span class="mt-0.5 h-4 w-4 rounded-full bg-brand-100 flex items-center justify-center">
+                    <span class="text-[10px] text-brand-700 font-semibold">✓</span>
+                  </span>
+                  Everything in Option A
+                </li>
+                <li class="flex gap-2">
+                  <span class="mt-0.5 h-4 w-4 rounded-full bg-brand-100 flex items-center justify-center">
+                    <span class="text-[10px] text-brand-700 font-semibold">✓</span>
+                  </span>
+                  No upfront invoice
+                </li>
+                <li class="flex gap-2">
+                  <span class="mt-0.5 h-4 w-4 rounded-full bg-brand-100 flex items-center justify-center">
+                    <span class="text-[10px] text-brand-700 font-semibold">✓</span>
+                  </span>
+                  Simple daily pricing
+                </li>
+              </ul>
+
+              <div class="mt-6">
+                <a
+                  href="#contact"
+                  class="inline-flex w-full items-center justify-center rounded-full border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-900 hover:bg-slate-50 transition"
+                >
+                  Start with Option B
+                </a>
+              </div>
+
+              <p class="mt-3 text-xs text-slate-500">
+                Ideal if you’d rather avoid a lump sum and spread things out instead.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feature Site / Case Study: Santa's Secret -->
+      <section class="bg-white border-b border-slate-200" id="feature-site">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+          
+          <!-- Header -->
+          <div class="max-w-3xl">
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+              Featured Site: <span class="text-brand-700">Santa’s Secret</span>
+            </h2>
+            <p class="mt-4 text-base sm:text-lg text-slate-700 leading-relaxed">
+              A bespoke Christmas decorations store in Bungendore, NSW.  
+              They wanted a website that matched their personality — warm, magical,  
+              and nothing like a generic template.
+            </p>
+          </div>
+
+          <!-- Content grid -->
+          <div class="mt-10 grid lg:grid-cols-[1.1fr,0.9fr] gap-8 lg:gap-12 items-start">
+            
+            <!-- Left column -->
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900 mb-3">
+                What they needed
+              </h3>
+              <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-6">
+                Santa’s Secret creates unique, handcrafted Christmas decorations and village scenes.  
+                Their shop is full of personality — and they wanted a website that reflected that magic.  
+                No cookie-cutter templates, no off-the-shelf themes.  
+                Just something warm, playful and truly theirs.
+              </p>
+
+              <h3 class="text-lg font-semibold text-slate-900 mb-3">
+                What we delivered
+              </h3>
+              <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-6">
+                We designed a custom site from scratch, complete with gentle interactive falling snow,
+                a fresh logo treatment, opening hours, social links and a beautifully presented photo gallery
+                showcasing their decorations and village displays.
+              </p>
+
+              <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-6">
+                We set up their Google Maps listing, helped them verify their Google Business profile,
+                added an online contact form and made sure everything loads fast on mobile.
+              </p>
+
+              <h3 class="text-lg font-semibold text-slate-900 mb-3">
+                Ongoing support
+              </h3>
+              <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+                Their site is hosted and monitored through 3LS, always up and always secure.  
+                Built in pure HTML, it’s fast, stable and effectively hack-proof.  
+                Any updates — new photos, tweaks, hours changes — are handled quickly as part of
+                their ongoing plan.
+              </p>
+
+              <p class="mt-4 text-xs sm:text-sm text-slate-500">
+                All included in their chosen 3LS website plan.
+              </p>
+            </div>
+
+            <!-- Right column: Image mockups -->
+            <div class="lg:pl-6">
+              <div class="bg-brand-50 border border-slate-200 rounded-3xl p-4 flex flex-col gap-4">
+                
+                <!-- Replace this Unsplash image with a real screenshot of the Santa's Secret homepage -->
+                <img
+                  src="https://images.unsplash.com/photo-1551030173-122aabc4489d?auto=format&fit=crop&w=1200&q=80"
+                  alt="Santa’s Secret website mockup placeholder"
+                  class="w-full rounded-2xl border border-slate-200 object-cover"
+                />
+                
+                <!-- Replace these with mobile screenshots if you like -->
+                <div class="grid grid-cols-2 gap-4">
+                  <img
+                    src="https://images.unsplash.com/photo-1551030173-3f177ec3e0cc?auto=format&fit=crop&w=600&q=80"
+                    alt="Mobile mockup placeholder"
+                    class="h-40 w-full rounded-xl border border-slate-200 object-cover"
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1551030173-1bf3f30c3b07?auto=format&fit=crop&w=600&q=80"
+                    alt="Mobile mockup placeholder"
+                    class="h-40 w-full rounded-xl border border-slate-200 object-cover"
+                  />
+                </div>
+
+                <p class="text-xs text-slate-500 text-center">
+                  Swap these for real screenshots from santassecret.com.au when you’re ready.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Optional testimonial / pull quote -->
+          <div class="mt-12 max-w-3xl border-l-4 border-brand-600 pl-6">
+            <p class="text-base sm:text-lg italic text-slate-700 leading-relaxed">
+              “We wanted something that felt like us, not something that looked like every other shop online.
+              3LS absolutely nailed it. They made everything simple — and the website has become a huge part of our store.”
+            </p>
+            <p class="mt-2 text-sm font-semibold text-slate-900">
+              — Santa’s Secret, Bungendore NSW
+            </p>
           </div>
 
         </div>
+      </section>
 
-      </div>
-    </section>
+      <!-- About / Listing Lens note -->
+      <section class="bg-white" id="about">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 grid lg:grid-cols-[0.9fr,1.1fr] gap-10 lg:gap-16 items-start">
+          <!-- Image placeholder -->
+          <div class="order-2 lg:order-1 lg:pr-4">
+            <div class="bg-brand-50 border border-slate-200 rounded-3xl p-4 flex flex-col gap-4">
+              <img
+                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80"
+                alt="Warm and welcoming café interior"
+                class="w-full rounded-2xl border border-slate-200 object-cover"
+              />
+              <p class="text-xs text-slate-500">
+                Placeholder image — swap for a photo that feels like your brand, your workspace, or a client story.
+              </p>
+            </div>
+          </div>
 
-    <!-- LAB -->
-    <section id="lab" class="border-t border-slate-200 bg-white py-16 sm:py-20">
-      <div class="max-w-5xl mx-auto px-4 text-center">
-
-        <span class="inline-flex bg-slate-100 px-3 py-1 text-[11px] font-semibold text-primary-600 rounded-full uppercase tracking-[0.2em]">
-          The Lab
-        </span>
-
-        <h2 class="mt-3 text-3xl sm:text-4xl font-bold text-slate-900">
-          We also build tools for buyers.
-        </h2>
-
-        <p class="mt-4 text-slate-600 sm:text-lg">
-          Listing Lens is our next-generation AI tool:
-          a buyer’s advocate that can read listings the way humans do.
-        </p>
-
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="border-t border-slate-200 bg-slate-50 py-16 sm:py-20">
-      <div class="max-w-4xl mx-auto px-4">
-
-        <div class="text-center mb-6">
-          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Let’s build your site.</h2>
-          <p class="mt-3 text-sm sm:text-base text-slate-600">
-            One form. Tell us about your business.
-          </p>
+          <!-- Copy -->
+          <div class="order-1 lg:order-2">
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+              We don’t just build websites. We make the internet feel a bit more human.
+            </h2>
+            <p class="mt-4 text-base sm:text-lg text-slate-700 leading-relaxed">
+              We like tools that make online life simpler — not louder.
+            </p>
+            <p class="mt-4 text-sm sm:text-base text-slate-700">
+              Behind the scenes, we’re also developing <span class="font-semibold">Listing Lens</span> — an app that helps people understand cars from a single screenshot.
+              Different product, same philosophy:
+              take something messy, make it simple, deliver it cleanly.
+            </p>
+            <p class="mt-4 text-sm sm:text-base text-slate-700">
+              3LS is built the same way.
+              Clear, useful, affordable.
+              Made for people who just want things done properly.
+            </p>
+            <p class="mt-4 text-sm sm:text-base text-slate-700">
+              Small businesses deserve modern tools without the modern stress.
+              You don’t need to learn web design.
+              You don’t need a big marketing agency.
+              You just need a clean, easy website that works — every day, without fuss.
+            </p>
+          </div>
         </div>
+      </section>
 
-        <div class="rounded-3xl bg-white border border-slate-200 shadow-sm p-5 sm:p-7">
+      <!-- Simple contact / CTA -->
+      <section class="bg-brand-50 border-t border-slate-200" id="contact">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <div class="max-w-3xl">
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+              Ready to get your website sorted?
+            </h2>
+            <p class="mt-4 text-sm sm:text-base text-slate-700">
+              Send us a short message about your business and which option you’re leaning towards.
+              We’ll reply with a simple next step — no pressure, no pushy sales.
+            </p>
+          </div>
 
-          <form name="contact" method="POST" data-netlify="true" class="space-y-4">
-            <input type="hidden" name="form-name" value="contact" />
-
-            <div>
-              <label class="text-xs uppercase font-semibold text-slate-500 tracking-[0.2em]">Email</label>
-              <input type="email" name="email" required
-                     class="w-full mt-2 rounded-2xl border border-slate-300 px-3 py-2 text-sm bg-slate-50 focus:border-primary-500 focus:bg-white focus:ring-1 focus:ring-primary-500">
-            </div>
-
-            <div>
-              <label class="text-xs uppercase font-semibold text-slate-500 tracking-[0.2em]">Business Name</label>
-              <input type="text" name="business"
-                     class="w-full mt-2 rounded-2xl border border-slate-300 px-3 py-2 text-sm bg-slate-50 focus:border-primary-500 focus:bg-white focus:ring-1 focus:ring-primary-500">
-            </div>
-
-            <div>
-              <label class="text-xs uppercase font-semibold text-slate-500 tracking-[0.2em]">What do you need?</label>
-              <select name="topic"
-                      class="w-full mt-2 rounded-2xl border border-slate-300 px-3 py-2 text-sm bg-slate-50 focus:border-primary-500 focus:bg-white focus:ring-1 focus:ring-primary-500">
-                <option value="website">$2/day website</option>
-                <option value="listing-lens">More about Listing Lens</option>
-                <option value="both">Both</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="text-xs uppercase font-semibold text-slate-500 tracking-[0.2em]">Tell us a bit about you</label>
-              <textarea name="message" rows="4"
-                        class="w-full mt-2 rounded-2xl border border-slate-300 px-3 py-2 text-sm bg-slate-50 focus:border-primary-500 focus:bg-white focus:ring-1 focus:ring-primary-500"
-                        placeholder="I run a ____ in ____. I need a site that can _____.">
-              </textarea>
-            </div>
-
-            <div class="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-              <button class="w-full sm:w-auto px-6 py-3 rounded-full bg-primary-500 text-white text-sm font-semibold hover:bg-primary-600">
-                Submit Enquiry
-              </button>
-              <p class="text-xs text-slate-500">We reply within one business day.</p>
-            </div>
-
-          </form>
+          <div class="mt-8 bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 max-w-3xl">
+            <!-- Replace this form action/handling with your own -->
+            <form class="space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-medium text-slate-700 mb-1">Name</label>
+                  <input
+                    type="text"
+                    class="block w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-600 focus:border-brand-600"
+                    placeholder="Jane Smith"
+                  />
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-slate-700 mb-1">Email</label>
+                  <input
+                    type="email"
+                    class="block w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-600 focus:border-brand-600"
+                    placeholder="you@example.com"
+                  />
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Business name</label>
+                <input
+                  type="text"
+                  class="block w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-600 focus:border-brand-600"
+                  placeholder="e.g. Northside Dog Grooming"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Which option are you interested in?</label>
+                <select
+                  class="block w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-600 focus:border-brand-600"
+                >
+                  <option value="">Choose one…</option>
+                  <option value="option-a">$3/day + $150 setup</option>
+                  <option value="option-b">$5/day, no setup fee</option>
+                  <option value="unsure">Not sure yet, please help me choose</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Anything else you’d like to share?</label>
+                <textarea
+                  rows="4"
+                  class="block w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-600 focus:border-brand-600"
+                  placeholder="Tell us what you do, what you have now (if anything), and what you’d like your new site to achieve."
+                ></textarea>
+              </div>
+              <div class="pt-2">
+                <button
+                  type="submit"
+                  class="inline-flex items-center justify-center rounded-full bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-700 transition"
+                >
+                  Send message
+                </button>
+                <p class="mt-2 text-xs text-slate-500">
+                  This is just a starting point — you’re not locking yourself into anything by reaching out.
+                </p>
+              </div>
+            </form>
+          </div>
         </div>
+      </section>
+    </main>
 
-        <p class="mt-6 text-center text-[11px] text-slate-400">
-          3LS // Listing Lens Labs ABN: 76 774 130 370.
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-xs text-slate-500">
+          © <span id="year-span"></span> 3LS. Simple websites for real-world businesses.
         </p>
-
+        <div class="flex items-center gap-4 text-xs text-slate-500">
+          <span>Listing Lens Labs</span>
+          <span class="hidden sm:inline">•</span>
+          <a href="#contact" class="hover:text-slate-700">Get in touch</a>
+        </div>
       </div>
-    </section>
+    </footer>
+  </div>
 
-  </main>
-
-  <!-- JS -->
   <script>
-    function toggleMobileMenu() {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    }
-    function closeMobileMenu() {
-      document.getElementById('mobile-menu').classList.add('hidden');
-    }
+    // Set current year in footer
+    document.getElementById('year-span').textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
