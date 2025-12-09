@@ -9,6 +9,8 @@
     content="3LS builds simple, modern websites and custom apps for real-world businesses with straightforward pricing."
   />
 
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%2317513a%22/><text x=%2250%22 y=%2265%22 font-family=%22sans-serif%22 font-size=%2250%22 text-anchor=%22middle%22 fill=%22white%22 font-weight=%22bold%22>3LS</text></svg>" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -22,7 +24,7 @@
               50: '#f4f6f5',
               100: '#e6ebe8',
               200: '#cce3d8',
-              400: '#5ba383', // Added for the App card accents
+              400: '#5ba383', // Accents for dark mode card
               600: '#1f6a4b',
               700: '#17513a',
             },
@@ -233,47 +235,89 @@
             Real businesses, real results.
           </h2>
 
-          <div class="mb-16 pb-16 border-b border-slate-200 last:border-b-0">
-            <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-8 lg:gap-12 items-center">
+          <div class="mb-16 pb-16 border-b border-slate-200">
+            <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-8 lg:gap-12 items-start">
               <div>
-                <h3 class="text-xl font-semibold text-slate-900 mb-3">Stepup2Fitness</h3>
+                <h3 class="text-xl font-semibold text-slate-900 mb-3">Santa's Secret</h3>
+                
                 <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-4">
-                  A personal trainer wanted to scale from home sessions to a real gym. The problem: without a proper online presence, he couldn't attract new members or look established enough to justify a commercial space.
+                  This beloved brick-and-mortar Christmas store needed a digital home that felt as magical as their physical shop. Generic templates felt cold and vulnerable to crashing during their peak season.
                 </p>
-                <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-4">
-                  We built a professional website that changed how people perceived his business—class schedules, trainer profiles, membership tiers, and sign-up systems that turned interested people into paying members.
+                
+                <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-6">
+                  We hand-coded a <strong>pure HTML website from scratch</strong>. No WordPress bloat, no databases to hack, and no plugins to update. It features custom-coded snow effects and gallery logic built specifically for them.
                 </p>
-                <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
-                  <strong>Result:</strong> He secured a gym space, built a community of regular members, and hired additional staff. The website was the credibility tool that made scaling possible.
-                </p>
+            
+                <blockquote class="relative border-l-4 border-brand-200 bg-brand-50/50 pl-4 py-3 pr-2 rounded-r-xl mb-6">
+                  <p class="text-sm italic text-slate-700 leading-relaxed">
+                    "I love that I never have to worry about updates or my site going down in December. It just works, it looks beautiful, and it captures exactly who we are."
+                  </p>
+                  <footer class="mt-2 text-xs font-bold text-brand-700">— Kim, Owner</footer>
+                </blockquote>
+            
+                <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                  <p class="text-sm font-medium text-slate-900">
+                    <strong>Result:</strong> 100% uptime, zero maintenance, fully secure.
+                  </p>
+                  <a href="https://santasecret.com.au/" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-600 hover:text-brand-700 transition">
+                    Visit full site →
+                  </a>
+                </div>
               </div>
-              <div class="lg:pl-6 order-first lg:order-last">
-                <img
-                  src="https://plus.unsplash.com/premium_photo-1674059549221-e2943b475f62?auto=format&fit=crop&w=600&q=80"
-                  alt="Stepup2Fitness gym community"
-                  class="w-full rounded-2xl border border-slate-200 object-cover"
-                />
+            
+              <div class="lg:pl-6 order-first lg:order-last w-full">
+                <div class="relative w-full h-[400px] rounded-2xl border border-slate-200 shadow-xl overflow-hidden bg-slate-100 group transition hover:shadow-2xl">
+                  
+                  <div class="absolute top-0 left-0 right-0 h-7 bg-slate-100 border-b border-slate-200 flex items-center px-3 gap-1.5 z-10">
+                    <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                    <div class="ml-2 text-[10px] text-slate-400 font-mono">santasecret.com.au</div>
+                  </div>
+            
+                  <iframe
+                    src="https://santasecret.com.au/"
+                    title="Santa's Secret Live Preview"
+                    class="w-full h-full pt-7 bg-white"
+                    loading="lazy"
+                  ></iframe>
+            
+                  <a 
+                    href="https://santasecret.com.au/" 
+                    target="_blank" 
+                    class="absolute inset-0 z-20 bg-transparent cursor-pointer"
+                    title="Click to visit the live site"
+                  ></a>
+                  
+                  <div class="absolute bottom-4 right-4 z-30 bg-slate-900/90 backdrop-blur text-white text-[10px] px-2 py-1 rounded-full flex items-center gap-1.5 shadow-sm pointer-events-none">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                    Live Preview
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-8 lg:gap-12 items-center">
             <div>
-              <h3 class="text-xl font-semibold text-slate-900 mb-3">Santa's Secret</h3>
+              <h3 class="text-xl font-semibold text-slate-900 mb-3">Stepup2Fitness</h3>
               <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-4">
-                A bespoke Christmas decorations store wanted a website that matched their warmth and personality—nothing templated, nothing generic. We designed a custom site with interactive details, a beautiful photo gallery, and opening hours that feel like it was made just for them.
+                A personal trainer wanted to scale from home sessions to a real gym. The problem: without a proper online presence, he couldn't attract new members or look established enough to justify a commercial space.
               </p>
               <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-4">
-                <strong>Result:</strong> A website that customers walk into and think, "Yep, that's them." Always up, always secure, always theirs.
+                We built a professional website that changed how people perceived his business—class schedules, trainer profiles, membership tiers, and sign-up systems that turned interested people into paying members.
               </p>
-              <a href="https://santasecret.com.au/" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-600 hover:text-brand-700 transition">
-                Visit santasecret.com.au →
-              </a>
+              <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+                <strong>Result:</strong> He secured a gym space, built a community of regular members, and hired additional staff. The website was the credibility tool that made scaling possible.
+              </p>
             </div>
             <div class="lg:pl-6 order-first lg:order-last">
               <img
-                src="https://images.unsplash.com/photo-1514192631-251f5f0b14f2?q=80&w=1170&auto=format&fit=crop"
-                alt="Santa's Secret Christmas decorations"
+                src="https://plus.unsplash.com/premium_photo-1674059549221-e2943b475f62?auto=format&fit=crop&w=600&q=80"
+                alt="Stepup2Fitness gym community"
                 class="w-full rounded-2xl border border-slate-200 object-cover"
               />
             </div>
