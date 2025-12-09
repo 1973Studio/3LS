@@ -61,7 +61,8 @@
       <a href="#top" class="flex items-center gap-2">
         <span class="text-xl font-black tracking-tight text-slate-900">3LS</span>
         <span class="text-primary-500 font-bold">//</span>
-        </a>
+        <span class="hidden text-sm text-slate-500 sm:inline">Listing Lens Labs</span>
+      </a>
 
       <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
         <a href="#websites" class="hover:text-slate-900">Websites ($2/Day)</a>
@@ -77,9 +78,9 @@
 
       <button onclick="toggleMobileMenu()"
               class="md:hidden text-slate-700 p-2 rounded-md">
-        <svg class="h-6 w-6" fill="none" stroke="currentColor">
+        <svg class="h-6 w-6" fill="none" stroke="currentCurrentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16" />
+            d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
 
@@ -109,7 +110,9 @@
 
       <div class="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-10">
 
+        <!-- HERO TEXT -->
         <div class="max-w-xl">
+
           <div class="inline-flex items-center px-3 py-1 rounded-full bg-primary-50 text-primary-600 text-[11px] font-semibold">
             <span class="h-2 w-2 rounded-full bg-primary-500 mr-2"></span>
             Bright, custom websites for real businesses
@@ -121,10 +124,22 @@
           </h1>
 
           <p class="mt-4 text-slate-600 text-base sm:text-lg">
-            No templates. No DIY builders. No $5,000 invoices.  
+            No templates. No DIY builders. No $5,000 invoice.
             3LS designs, builds and maintains your website for just $2/day — starting with real results like
-            <span class="font-semibold colour="red" text-slate-900">Santa Secret</span>.
+            <span class="font-semibold text-slate-900">Santa Secret</span>.
           </p>
+
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="#contact"
+               class="w-full sm:w-auto px-6 py-3 text-sm font-semibold bg-primary-500 text-white rounded-full hover:bg-primary-600">
+              Start My $2/Day Site
+            </a>
+
+            <a href="#work"
+               class="w-full sm:w-auto px-6 py-3 text-sm font-semibold border border-slate-300 bg-white rounded-full hover:bg-slate-50">
+              See the Santa Secret Site
+            </a>
+          </div>
 
           <p class="mt-3 text-xs text-slate-500">Hosting, updates and support included. No surprise fees.</p>
 
@@ -134,45 +149,39 @@
             <span class="px-3 py-1 rounded-full border border-slate-300 bg-white">Airwallex</span>
             <span class="px-3 py-1 rounded-full border border-slate-300 bg-white">Canva</span>
             <span class="px-3 py-1 rounded-full border border-slate-300 bg-white">OpenAI</span>
-            <span class="px-3 py-1 rounded-full border border-slate-300 bg-white">GitHub</span>
-            <span class="px-3 py-1 rounded-full border border-slate-300 bg-white">HTML 5</span>
           </div>
         </div>
 
-        <!-- Phone preview -->
+        <!-- PHONE VIDEO DEMO -->
         <div class="flex justify-center flex-1">
           <div class="bg-white p-5 shadow-lg rounded-3xl border border-slate-200 w-full max-w-md">
 
-            <p class="text-xs text-slate-500 font-semibold uppercase tracking-[0.2em]">Your site, on their phone</p>
+            <p class="text-xs text-slate-500 font-semibold uppercase tracking-[0.2em]">
+              What modern websites feel like
+            </p>
 
             <div class="mt-3 flex justify-center">
               <div class="max-w-xs w-full p-2 rounded-[2rem] border border-slate-200 bg-slate-900/90 shadow-lg">
-                <div class="aspect-[9/18] bg-gradient-to-b from-slate-800 to-slate-900 rounded-[1.6rem] p-4 flex flex-col justify-between">
+                <div class="aspect-[9/18] overflow-hidden rounded-[1.6rem] bg-black relative">
 
-                  <div>
-                    <div class="px-2 py-1 inline-block bg-slate-800/80 text-primary-100 rounded-full text-[10px] font-semibold">
-                      Your Business Name
-                    </div>
-                    <p class="text-white font-semibold text-sm mt-2">Discover what we do in seconds, not minutes.</p>
-                    <p class="text-slate-300 text-[11px] mt-1">A clean hero, clear headline & one obvious action button.</p>
-                  </div>
-
-                  <div>
-                    <button class="w-full py-2 text-[11px] bg-primary-500 text-white rounded-full font-semibold">
-                      Contact Us
-                    </button>
-                    <div class="flex justify-between text-slate-300 text-[10px] mt-2">
-                      <span>📍 Location</span><span>⏰ Hours</span><span>📸 Instagram</span>
-                    </div>
-                  </div>
+                  <video
+                    src="https://p2-kling.klingai.com/kcdn/cdn-kcdn112452/kling-website/page3-v2-2-en.mp4"
+                    class="absolute inset-0 h-full w-full object-cover"
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                  ></video>
 
                 </div>
               </div>
             </div>
 
             <p class="mt-4 text-xs text-slate-600">
-              Every build is different, but the goal is the same: look great on mobile and make it easy to visit, call or message you.
+              Your website should feel alive — smooth, fast and beautiful on every phone.
+              This is the standard we build to.
             </p>
+
           </div>
         </div>
 
@@ -187,7 +196,7 @@
         <h2 class="mt-3 text-3xl sm:text-4xl font-bold text-slate-900">A proper website, without the painful price tag.</h2>
 
         <p class="mt-4 text-slate-600 sm:text-lg">
-          Most agencies want $3k–$7k upfront.  
+          Most agencies want $3k–$7k upfront.
           We want <span class="font-semibold text-slate-900">$2 a day</span> and a long-term relationship.
         </p>
 
@@ -203,7 +212,7 @@
           <h2 class="mt-3 text-3xl sm:text-4xl font-bold text-slate-900">Santa Secret – Christmas, done properly.</h2>
 
           <p class="mt-4 text-slate-600 sm:text-lg">
-            Santa Secret is a bricks-and-mortar Christmas shop.  
+            Santa Secret is a bricks-and-mortar Christmas shop.
             Their website needed to feel magical, warm, and simple — just like walking into the store.
           </p>
         </div>
@@ -212,6 +221,7 @@
 
           <!-- Breakdown -->
           <div class="space-y-5">
+
             <div class="rounded-2xl bg-white p-5 shadow-sm border border-slate-200">
               <p class="text-xs text-slate-500 uppercase tracking-[0.2em] font-semibold">The brief</p>
               <ul class="mt-2 text-sm text-slate-700 space-y-1">
@@ -247,7 +257,7 @@
             <div class="rounded-2xl bg-white p-5 shadow-sm border border-slate-200">
               <p class="text-xs text-slate-500 uppercase tracking-[0.2em] font-semibold">Why it works</p>
               <p class="mt-2 text-sm text-slate-700">
-                It doesn't pretend to be an online shop.  
+                It doesn't pretend to be an online shop.
                 It's a beautiful, simple digital brochure that makes people want to visit.
               </p>
             </div>
@@ -277,7 +287,7 @@
               </p>
 
               <p class="mt-2 text-sm text-slate-700 text-center">
-                A warm hero image, bold headline and clear CTA —  
+                A warm hero image, bold headline and clear CTA —
                 exactly what a local shop needs.
               </p>
 
@@ -310,7 +320,7 @@
         </h2>
 
         <p class="mt-4 text-slate-600 sm:text-lg">
-          Listing Lens is our next-generation AI tool:  
+          Listing Lens is our next-generation AI tool:
           a buyer’s advocate that can read listings the way humans do.
         </p>
 
@@ -382,7 +392,8 @@
         </div>
 
         <p class="mt-6 text-center text-[11px] text-slate-400">
-          3LS // Listing Lens Labs  ABN: 76 774 130 370.
+          3LS // Listing Lens Labs is the trading name of Peter James Bergmann.<br>
+          ABN: XX XXX XXX XXX.
         </p>
 
       </div>
